@@ -45,7 +45,9 @@ const ContactForm = ({ onAdd }) => {
     <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
       {/* Trường Họ và Tên */}
       <div className="col-12">
+        <label htmlFor="name">Họ và Tên</label>
         <input
+          id="name"
           type="text"
           className={`form-control ${errors.name ? "is-invalid" : ""}`}
           placeholder="Nhập họ và tên"
@@ -58,7 +60,9 @@ const ContactForm = ({ onAdd }) => {
 
       {/* Trường Số điện thoại */}
       <div className="col-12">
+        <label htmlFor="phone">Số Điện Thoại</label>
         <input
+          id="phone"
           type="text"
           className={`form-control ${errors.phone ? "is-invalid" : ""}`}
           placeholder="Nhập số điện thoại"
@@ -71,6 +75,7 @@ const ContactForm = ({ onAdd }) => {
 
       {/* Trường Email */}
       <div className="col-12">
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           className={`form-control ${errors.email ? "is-invalid" : ""}`}

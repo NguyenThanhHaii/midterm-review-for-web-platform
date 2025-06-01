@@ -20,7 +20,9 @@ function ProductList({ products, onUpdateStatus, onDelete }) {
                 <button
                   onClick={() => onUpdateStatus(product.id)}
                   className={`btn ${
-                    product.status === "Còn hàng" ? "btn-warning" : "btn-danger"
+                    product.status === "Còn hàng"
+                      ? "btn-primary"
+                      : "btn-warning"
                   }`}
                 >
                   Đánh dấu {product.status}
