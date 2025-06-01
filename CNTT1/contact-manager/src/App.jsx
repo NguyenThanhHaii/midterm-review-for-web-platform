@@ -19,6 +19,15 @@ function App() {
     setContacts([...contacts, { ...contact, id: crypto.randomUUID() }]);
   };
 
+  // Hàm cập nhật thông tin danh bạ
+  const updateContact = (updatedContact) => {
+    setContacts(
+      contacts.map((contact) =>
+        contact.id === updatedContact.id ? updatedContact : contact
+      )
+    );
+  };
+
   // Hàm xóa danh bạ
   const deleteContact = (id) => {
     setContacts(contacts.filter((contact) => contact.id !== id));
@@ -39,7 +48,11 @@ function App() {
         <h2 className="card-header bg-secondary text-white mb-3">
           Danh Sách Danh Bạ
         </h2>
-        <ContactList contacts={contacts} onDelete={deleteContact} />
+        <ContactList
+          contacts={contacts}
+          onUpdate={updateContact}
+          onDelete={deleteContact}
+        />
       </div>
     </div>
   );

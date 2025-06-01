@@ -25,7 +25,8 @@ function ProductList({ products, onUpdateStatus, onDelete }) {
                       : "btn-warning"
                   }`}
                 >
-                  Đánh dấu {product.status}
+                  Đánh dấu{" "}
+                  {product.status === "Còn hàng" ? "Hết hàng" : "Còn hàng"}
                 </button>
                 <button
                   onClick={() => onDelete(product.id)}
